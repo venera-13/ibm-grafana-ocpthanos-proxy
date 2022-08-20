@@ -1,4 +1,4 @@
-module github.com/IBM/ibm-grafana-ocpthanos-proxy
+module github.com/venera-13/ibm-grafana-ocpthanos-proxy
 
 go 1.18
 

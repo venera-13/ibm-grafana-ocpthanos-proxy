@@ -24,8 +24,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/IBM/ibm-grafana-ocpthanos-proxy/pkg/nsparser"
-	"github.com/IBM/ibm-grafana-ocpthanos-proxy/pkg/proxy"
+	"github.com/venera-13/ibm-grafana-ocpthanos-proxy/pkg/nsparser"
+	"github.com/venera-13/ibm-grafana-ocpthanos-proxy/pkg/proxy"
 )
 
 type config struct {

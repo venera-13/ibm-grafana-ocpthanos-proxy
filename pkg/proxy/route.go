@@ -28,7 +28,7 @@ import (
 
 	promparser "github.com/prometheus/prometheus/promql/parser"
 
-	"github.com/IBM/ibm-grafana-ocpthanos-proxy/pkg/nsparser"
+	"github.com/venera-13/ibm-grafana-ocpthanos-proxy/pkg/nsparser"
 )
 
 type routes struct {
@@ -51,8 +51,8 @@ func (r *routes) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	r.mux.ServeHTTP(w, req)
 }
 
-//1. custom httputil.ReverseProxy
-//2. register handler functions
+// 1. custom httputil.ReverseProxy
+// 2. register handler functions
 func (r *routes) init() {
 	proxy := httputil.NewSingleHostReverseProxy(r.thanosURL)
 	// it is http.DefaultTransport with extra tls Config
@@ -116,7 +116,7 @@ func (r *routes) init() {
 
 }
 
-//query injects namespaces into PromQL query string
+// query injects namespaces into PromQL query string
 func (r *routes) query(w http.ResponseWriter, req *http.Request) {
 	namespaces, err := r.nsparser.ParseNamespaces(req)
 	if err != nil {
@@ -161,19 +161,19 @@ func (r *routes) query(w http.ResponseWriter, req *http.Request) {
 	r.handler.ServeHTTP(w, req)
 }
 
-//wrap our function as http handler
+// wrap our function as http handler
 func (r *routes) wrapMethod(h http.HandlerFunc) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 		h(w, req)
 	})
 }
 
-//forward forwards request directly without any change
+// forward forwards request directly without any change
 func (r *routes) forward(w http.ResponseWriter, req *http.Request) {
 	r.handler.ServeHTTP(w, req)
 }
 
-//copied from httputil for customizing Director of http.ReverseProxy
+// copied from httputil for customizing Director of http.ReverseProxy
 func singleJoiningSlash(a, b string) string {
 	aslash := strings.HasSuffix(a, "/")
 	bslash := strings.HasPrefix(b, "/")

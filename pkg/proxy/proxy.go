@@ -22,10 +22,10 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/IBM/ibm-grafana-ocpthanos-proxy/pkg/nsparser"
+	"github.com/venera-13/ibm-grafana-ocpthanos-proxy/pkg/nsparser"
 )
 
-//StartAndServe start HTTP server and forward request to backend server
+// StartAndServe start HTTP server and forward request to backend server
 func StartAndServe(listenAddr string,
 	urlPrefix string,
 	thanosAddr string,

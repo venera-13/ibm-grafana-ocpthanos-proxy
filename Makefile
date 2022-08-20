@@ -21,12 +21,12 @@ BUILD_LOCALLY ?= 1
 # Image URL to use all building/pushing image targets;
 # Use your own docker registry and image name for dev/test by overridding the
 # IMAGE_REPO, IMAGE_NAME and RELEASE_TAG environment variable.
-IMAGE_REPO ?= "hyc-cloud-private-integration-docker-local.artifactory.swg-devops.com/ibmcom"
+IMAGE_REPO ?= "localhost"
 IMAGE_NAME ?= grafana-ocpthanos-proxy
 
 # Github host to use for checking the source tree;
 # Override this variable ue with your own value if you're working on forked repo.
-GIT_HOST ?= github.com/IBM
+GIT_HOST ?= github.com/venera-13
 
 PWD := $(shell pwd)
 BASE_DIR := $(shell basename $(PWD))
