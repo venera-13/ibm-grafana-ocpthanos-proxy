@@ -2,5 +2,6 @@ type: ns-list
 paras:
   namespaces:
   # - "ALL"
-  - "ibm-common-services"
-  - "openshift-monitoring"
+  - "namespace-1"
+  - "namespace-2"
+  - "project-.+"
